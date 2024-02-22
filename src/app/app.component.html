@@ -1,0 +1,24 @@
+<app-header [items]="c"> </app-header>
+
+<div class="put">
+  <input
+    type="text"
+    placeholder="search here.. "
+    class="bi bi bi-search"
+    [(ngModel)]="st"
+  /><button class="btn btn-danger d-inline-block" (click)="search()">🔍</button>
+</div>
+<div class="recepies">
+  <div class="recepie" *ngFor="let r of recepies">
+    <img src="{{ r.image }}" alt="{{ r.name }}" />
+    <h3>{{ r.name }}</h3>
+    <h5><strong>Ingredients:</strong>{{ r.ingredients }}</h5>
+    <h5>{{ r.rating }}/5⭐⭐⭐⭐</h5>
+    <button class="btn btn-primary w-100 gap-15" (click)="fun1()">
+      Order✔️
+    </button>
+    <button class="btn btn-secondary w-100 gap-15 d-inline" (click)="fun2()">
+      cancel❌
+    </button>
+  </div>
+</div>
